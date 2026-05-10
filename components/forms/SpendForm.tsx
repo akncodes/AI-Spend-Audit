@@ -163,7 +163,7 @@ export default function SpendForm() {
     return (
       <div className="flex flex-col items-center justify-center p-12 space-y-4">
         <Loader2 className="w-8 h-8 animate-spin text-teal-600" />
-        <p className="text-gray-500 animate-pulse">Loading tool configurations...</p>
+        <p className="text-slate-500 animate-pulse">Loading tool configurations...</p>
       </div>
     );
   }
@@ -174,11 +174,11 @@ export default function SpendForm() {
       className="max-w-2xl mx-auto space-y-8"
     >
       <div className="space-y-2">
-        <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
+        <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
           <Calculator className="w-6 h-6 text-teal-600" />
           AI Spend Audit
         </h2>
-        <p className="text-sm text-gray-600">Configure your AI stack to identify potential savings.</p>
+        <p className="text-sm text-slate-600">Configure your AI stack to identify potential savings.</p>
       </div>
 
       <ToolSelector
@@ -189,7 +189,7 @@ export default function SpendForm() {
         onUpdateTool={handleUpdateTool}
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-gray-200">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-slate-200">
         <div className="space-y-2">
           <Label htmlFor="teamSize">Team Size</Label>
           <Input
@@ -242,7 +242,7 @@ export default function SpendForm() {
           )}
         </Button>
         {!isValid && selectedTools.length === 0 && (
-          <p className="text-center text-sm text-gray-400 mt-3">
+          <p className="text-center text-sm text-slate-400 mt-3">
             Please select at least one AI tool to begin the audit.
           </p>
         )}

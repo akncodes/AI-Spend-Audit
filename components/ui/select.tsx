@@ -51,7 +51,7 @@ export function SelectTrigger({
       type="button"
       onClick={() => context.setOpen(!context.open)}
       className={cn(
-        "flex h-10 w-full items-center justify-between rounded-md border border-gray-200 bg-white px-3 py-2 text-sm ring-offset-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-500 disabled:cursor-not-allowed disabled:opacity-50",
+        "flex h-10 w-full items-center justify-between rounded-md border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-500 disabled:cursor-not-allowed disabled:opacity-50",
         className
       )}
     >
@@ -73,7 +73,7 @@ export function SelectValue({ placeholder }: { placeholder?: string }) {
 
   return (
     <span className="truncate">
-      {context.value || <span className="text-gray-500">{placeholder}</span>}
+      {context.value || <span className="text-slate-500">{placeholder}</span>}
     </span>
   );
 }
@@ -93,7 +93,7 @@ export function SelectContent({
   return (
     <div
       className={cn(
-        "absolute z-50 mt-2 max-h-60 w-full overflow-auto rounded-md border border-gray-200 bg-white p-1 text-sm shadow-md",
+        "absolute z-50 mt-2 max-h-60 w-full overflow-auto rounded-md border border-slate-200 bg-white p-1 text-sm shadow-md",
         className
       )}
     >

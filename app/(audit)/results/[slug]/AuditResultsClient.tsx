@@ -86,10 +86,10 @@ export default function AuditResultsClient({
   return (
     <div className="space-y-6 pt-6">
       {/* Action Bar */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 border border-gray-200 rounded-lg">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 border border-slate-200 rounded-lg">
         <div className="flex items-center gap-3">
-          <Lock className="w-4 h-4 text-gray-500" />
-          <p className="text-sm text-gray-600">
+          <Lock className="w-4 h-4 text-slate-500" />
+          <p className="text-sm text-slate-600">
             This report is currently <span className="font-semibold">private</span>.
           </p>
         </div>
@@ -105,16 +105,16 @@ export default function AuditResultsClient({
 
       {/* High Savings CTA - Credex Feature */}
       {monthlySavings > 500 && (
-        <div className="border border-gray-200 rounded-lg p-6">
+        <div className="border border-slate-200 rounded-lg p-6">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="space-y-3">
               <p className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-teal-50 text-teal-700 text-xs font-semibold uppercase tracking-widest">
                 Optimization Opportunity
               </p>
-              <h3 className="text-xl font-bold text-gray-900">
+              <h3 className="text-xl font-bold text-slate-900">
                 You're saving over ${monthlySavings}/mo!
               </h3>
-              <p className="text-gray-600 max-w-md text-sm">
+              <p className="text-slate-600 max-w-md text-sm">
                 Your AI stack has significant optimization potential. Credex can
                 help you implement these changes and manage your AI infrastructure
                 for maximum efficiency.
@@ -131,12 +131,12 @@ export default function AuditResultsClient({
       )}
 
       {/* Lead Capture Section */}
-      <div className="border border-gray-200 rounded-lg p-6 bg-gray-50">
+      <div className="border border-slate-200 rounded-lg p-6 bg-slate-50">
         {!isLeadCaptured ? (
           <div className="space-y-6">
             <div className="space-y-2">
-              <h3 className="text-lg font-semibold text-gray-900">Save Your Audit Report</h3>
-              <p className="text-gray-600 text-sm">
+              <h3 className="text-lg font-semibold text-slate-900">Save Your Audit Report</h3>
+              <p className="text-slate-600 text-sm">
                 Enter your email to receive a copy of this analysis and future optimization tips.
               </p>
             </div>
@@ -175,10 +175,10 @@ export default function AuditResultsClient({
         ) : (
           <div className="flex flex-col items-center justify-center py-6 text-center space-y-3">
             <Check className="w-5 h-5 text-green-600" />
-            <h3 className="font-semibold text-gray-900">Report Saved!</h3>
-            <p className="text-gray-600 text-sm max-w-xs">
+            <h3 className="font-semibold text-slate-900">Report Saved!</h3>
+            <p className="text-slate-600 text-sm max-w-xs">
               We've sent a copy of your audit to your inbox. Check your email for the full breakdown.
-+            </p>
+            </p>
           </div>
         )}
       </div>

@@ -34,7 +34,7 @@ export default function ToolSelector({
   return (
     <div className="space-y-6">
       <div className="space-y-3">
-        <Label className="text-base font-semibold text-gray-900">
+        <Label className="text-base font-semibold text-slate-900">
           Select AI Tools to Audit
         </Label>
         <div className="flex flex-wrap gap-2">
@@ -51,7 +51,7 @@ export default function ToolSelector({
                   "rounded-full px-4 py-2 transition-all duration-200",
                   isSelected
                     ? "bg-teal-600 hover:bg-teal-700 text-white"
-                    : "text-gray-600 hover:border-teal-500 hover:text-teal-600",
+                    : "text-slate-600 hover:border-teal-500 hover:text-teal-600",
                 )}
                 onClick={() =>
                   isSelected
@@ -68,9 +68,9 @@ export default function ToolSelector({
 
       <div className="space-y-4">
         {selectedTools.length === 0 && (
-          <div className="flex flex-col items-center justify-center p-8 border border-gray-200 rounded-lg text-center">
-            <p className="text-gray-600 font-medium mb-1">No tools selected yet.</p>
-            <p className="text-sm text-gray-500">
+          <div className="flex flex-col items-center justify-center p-8 border border-slate-200 rounded-lg text-center">
+            <p className="text-slate-600 font-medium mb-1">No tools selected yet.</p>
+            <p className="text-sm text-slate-500">
               Click a tool above to start auditing your spend.
             </p>
           </div>
@@ -83,17 +83,17 @@ export default function ToolSelector({
           return (
             <div
               key={selected.toolId}
-              className="p-4 border border-gray-200 rounded-lg relative group transition-all hover:border-teal-300"
+              className="p-4 border border-slate-200 rounded-lg relative group transition-all hover:border-teal-300"
             >
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                   <ToolIcon className="w-4 h-4 text-teal-600" />
-                  <h3 className="font-semibold text-gray-900">{config.name}</h3>
+                  <h3 className="font-semibold text-slate-900">{config.name}</h3>
                 </div>
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="text-gray-400 hover:text-red-500 transition-colors h-8 w-8"
+                  className="text-slate-400 hover:text-red-500 transition-colors h-8 w-8"
                   onClick={() => onRemoveTool(selected.toolId)}
                   aria-label={`Remove ${config.name}`}
                 >
@@ -103,7 +103,7 @@ export default function ToolSelector({
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="space-y-2">
-                  <Label className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <Label className="text-xs font-medium text-slate-500 uppercase tracking-wider">
                     Plan
                   </Label>
                   <Select
@@ -126,11 +126,11 @@ export default function ToolSelector({
                 </div>
 
                 <div className="space-y-2">
-                  <Label className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <Label className="text-xs font-medium text-slate-500 uppercase tracking-wider">
                     Monthly Spend ($)
                   </Label>
                   <div className="relative">
-                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">
+                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">
                       $
                     </span>
                     <Input
@@ -147,7 +147,7 @@ export default function ToolSelector({
                 </div>
 
                 <div className="space-y-2">
-                  <Label className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <Label className="text-xs font-medium text-slate-500 uppercase tracking-wider">
                     Seats
                   </Label>
                   <Input
