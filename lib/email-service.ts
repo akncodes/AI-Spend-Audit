@@ -3,7 +3,7 @@ import { AuditResponse } from './types';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const FROM_EMAIL = 'noreply@aispendy.com';
+const FROM_EMAIL = 'imabhishek40@gmail.com';
 const FROM_NAME = 'AI Spend Audit';
 
 /**

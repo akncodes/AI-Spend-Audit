@@ -93,7 +93,7 @@ export default function ToolSelector({
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="text-slate-400 hover:text-red-500 transition-colors h-8 w-8"
+                  className="text-blue-400 hover:text-red-500 transition-colors h-8 w-8"
                   onClick={() => onRemoveTool(selected.toolId)}
                   aria-label={`Remove ${config.name}`}
                 >
@@ -112,7 +112,7 @@ export default function ToolSelector({
                       onUpdateTool(selected.toolId, { planId: val })
                     }
                   >
-                    <SelectTrigger className="w-full h-10">
+                    <SelectTrigger className="w-full text-blue-400 h-10">
                       <SelectValue placeholder="Select Plan" />
                     </SelectTrigger>
                     <SelectContent>
@@ -130,12 +130,12 @@ export default function ToolSelector({
                     Monthly Spend ($)
                   </Label>
                   <div className="relative">
-                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">
+                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-blue-400 text-sm">
                       $
                     </span>
                     <Input
                       type="number"
-                      className="pl-7 h-10"
+                      className="pl-7 text-blue-400  h-10"
                       value={selected.monthlySpend}
                       onChange={(e) =>
                         onUpdateTool(selected.toolId, {
@@ -152,7 +152,7 @@ export default function ToolSelector({
                   </Label>
                   <Input
                     type="number"
-                    className="h-10"
+                    className="h-10 text-blue-400"
                     value={selected.seats}
                     onChange={(e) =>
                       onUpdateTool(selected.toolId, {

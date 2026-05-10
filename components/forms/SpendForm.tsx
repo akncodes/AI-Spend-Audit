@@ -189,7 +189,7 @@ export default function SpendForm() {
         onUpdateTool={handleUpdateTool}
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-slate-200">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t text-blue-400 border-slate-200">
         <div className="space-y-2">
           <Label htmlFor="teamSize">Team Size</Label>
           <Input
@@ -209,7 +209,7 @@ export default function SpendForm() {
             value={getValues("useCase")}
             onValueChange={(val) => setValue("useCase", val as any, { shouldValidate: true })}
           >
-            <SelectTrigger className="h-10">
+            <SelectTrigger className="h-10 text-blue-400">
               <SelectValue placeholder="Select use case" />
             </SelectTrigger>
             <SelectContent>
