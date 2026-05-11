@@ -4,7 +4,7 @@ import { auditRequestSchema } from "@/components/forms/form-schemas";
 import { auditAllTools } from "@/lib/audit-engine";
 import { generateAuditSummary } from "@/lib/ai-service";
 import { supabase } from "@/lib/supabase";
-import { ApiResponse } from "@/lib/types";
+import { ApiResponse, AuditResponse } from "@/lib/types";
 
 export async function POST(req: NextRequest): Promise<NextResponse> {
   try {
@@ -20,7 +20,8 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
           success: false,
           error: {
             code: "INVALID_INPUT",
-            message: Object.values(flattened.fieldErrors)[0]?.[0] || "Invalid input",
+            message:
+              Object.values(flattened.fieldErrors)[0]?.[0] || "Invalid input",
           },
         },
         { status: 400 },
@@ -35,14 +36,15 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
       auditData.useCase,
     );
 
-    let summary = '';
+    let summary = "";
     try {
       summary = await generateAuditSummary(
-        calculatedResults as Omit<AuditResponse, 'summary'>
+        calculatedResults as Omit<AuditResponse, "summary">,
       );
     } catch (aiError) {
-      console.error('AI summary failed, continuing without it:', aiError);
-      summary = 'Summary could not be generated, but your savings data is accurate.';
+      console.error("AI summary failed, continuing without it:", aiError);
+      summary =
+        "Summary could not be generated, but your savings data is accurate.";
     }
 
     const publicSlug = nanoid(10);
