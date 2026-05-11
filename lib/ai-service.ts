@@ -1,9 +1,4 @@
-import Anthropic from '@anthropic-ai/sdk';
 import { AuditResponse, Recommendation } from './types';
-
-const anthropic = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY,
-});
 
 // fallback text for when claude API times out or errors
 const fallbacks = {
@@ -21,15 +16,11 @@ export async function generateAuditSummary(auditData: Omit<AuditResponse, 'summa
   const { totalSavings, recommendations } = auditData;
   const monthlySavings = totalSavings.monthly;
 
-  if (monthlySavings === 0) {
-    return fallbacks.low(0, ['your current tools']);
-  }
-
   let timeoutId: ReturnType<typeof setTimeout> | undefined;
   try {
     const controller = new AbortController();
-    // TODO: make timeout configurable via env var
-    timeoutId = setTimeout(() => controller.abort(), 2500);
+    // Allow up to 5s for OpenRouter to respond
+    timeoutId = setTimeout(() => controller.abort(), 5000);
 
     const prompt = `
       You are an expert AI Spend Auditor. Give a punchy, professional summary of a team's AI spending.
@@ -41,14 +32,32 @@ export async function generateAuditSummary(auditData: Omit<AuditResponse, 'summa
       Keep it around 100 words. Mention specific tools and savings amounts. Be direct, no fluff.
     `;
 
-    const message = await anthropic.messages.create({
-      model: 'claude-3-haiku-20240307',
-      max_tokens: 200,
-      messages: [{ role: 'user', content: prompt }],
-      stop_sequences: ['\n'],
-    }, { signal: controller.signal });
+    const apiKey = process.env.OPENROUTER_API_KEY || process.env.ANTHROPIC_API_KEY;
+    if (!apiKey) {
+      throw new Error("Missing API Key");
+    }
 
-    const text = message.content[0].type === 'text' ? message.content[0].text : '';
+    const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+        "HTTP-Referer": process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
+      },
+      body: JSON.stringify({
+        model: "anthropic/claude-3-haiku",
+        messages: [{ role: "user", content: prompt }],
+        max_tokens: 200,
+      }),
+      signal: controller.signal
+    });
+
+    if (!response.ok) {
+      throw new Error(`OpenRouter API error: ${response.status} ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    const text = data.choices?.[0]?.message?.content || "";
     return text.trim();
 
   } catch (error: unknown) {

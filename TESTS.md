@@ -144,7 +144,7 @@ All must pass for green status.
 - [ ] Lead capture tests (email validation, storage)
 - [ ] AI service tests (fallback templates, timeout handling)
 - [ ] Shareable URL generation tests (slug uniqueness)
-- [ ] Email sending tests (Nodemailer API mocking)
+- [ ] Email sending tests (Resend API mocking)
 
 ---
 

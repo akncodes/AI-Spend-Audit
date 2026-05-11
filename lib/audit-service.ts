@@ -8,7 +8,7 @@ export async function getAuditBySlug(slug: string): Promise<AuditResponse | null
 
   const { data: audit, error: dbError } = await supabase
     .from("audits")
-    .select("id, public_slug, recommendations, total_savings_monthly, ai_summary")
+    .select("id, public_slug, recommendations, current_spend_monthly, total_savings_monthly, ai_summary")
     .eq("public_slug", slug)
     .single();
 
@@ -30,9 +30,8 @@ export async function getAuditBySlug(slug: string): Promise<AuditResponse | null
     auditId: audit.id,
     publicSlug: audit.public_slug,
     currentSpend: {
-      // FIXME: currentSpend isn't stored separately — need to add that column later
-      monthly: 0,
-      annual: 0,
+      monthly: audit.current_spend_monthly,
+      annual: audit.current_spend_monthly * 12,
     },
     recommendations: audit.recommendations,
     totalSavings: {

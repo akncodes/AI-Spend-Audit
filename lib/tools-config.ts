@@ -37,7 +37,9 @@ export const TOOL_CONFIGS: Record<string, ToolConfiguration> = {
       plus: { planId: 'plus', name: 'Plus', price: 20, billing: 'monthly' },
       team: { planId: 'team', name: 'Team', price: 25, billing: 'monthly' },
     },
-    alternatives: {}
+    alternatives: {
+      coding: 'cursor', // suggest Cursor for coding
+    }
   },
   'github-copilot': {
     toolId: 'github-copilot',
@@ -52,7 +54,7 @@ export const TOOL_CONFIGS: Record<string, ToolConfiguration> = {
     toolId: 'openai-api',
     name: 'OpenAI API',
     plans: {
-      direct: { planId: 'direct', name: 'Direct', price: 0, billing: 'monthly' }, // usage-based, 0 is placeholder
+      direct: { planId: 'direct', name: 'Direct', price: 0, billing: 'monthly' },
     },
     alternatives: {}
   },
@@ -60,7 +62,7 @@ export const TOOL_CONFIGS: Record<string, ToolConfiguration> = {
     toolId: 'anthropic-api',
     name: 'Anthropic API',
     plans: {
-      direct: { planId: 'direct', name: 'Direct', price: 0, billing: 'monthly' }, // usage-based
+      direct: { planId: 'direct', name: 'Direct', price: 0, billing: 'monthly' },
     },
     alternatives: {}
   },
@@ -71,7 +73,10 @@ export const TOOL_CONFIGS: Record<string, ToolConfiguration> = {
       free: { planId: 'free', name: 'Free', price: 0, billing: 'free' },
       pro: { planId: 'pro', name: 'Pro', price: 20, billing: 'monthly' },
     },
-    alternatives: {}
+    alternatives: {
+      coding: 'cursor',
+      writing: 'chatgpt'
+    }
   },
   windsurf: {
     toolId: 'windsurf',
