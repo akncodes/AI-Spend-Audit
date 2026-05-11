@@ -50,24 +50,25 @@ Capture exact things they said. Use quotation marks and preserve their language:
 - **Role:** Algo Engineer 
 - **Company:** SIHO Research 
 - **Team Size:**  
-- **Interview Date:** 
+- **Interview Date:** 11-05-2026
 - **Interview Length:** 
 
 ### Direct Quotes
+> "In terms of tracking, we do keep a track of usage and billings, but nothing for cost optimization as of now"
 
-> "[Quote 1]"
+> " COST VS value is satisfactory when the team knows how to use the resources. For me , it's still over valued."
 
-> "[Quote 2]"
+> "With spendings, I see it overvalued and lack of skills in team for its proper usage."
 
-> "[Quote 3]"
+> "Nope, I faced unexpected bills as we clearly keep a track of usage and billings."
 
-> "[Quote 4]"
+
 
 ### Key Insights
-[What surprised you?]
-
+- I see it overvalued and lack of skills in team.
+- 
 ### Design Changes from Feedback
-[What design/feature change did you make?]
+
 
 
 ## Interview 3: [NAME/ROLE]
