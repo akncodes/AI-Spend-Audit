@@ -26,7 +26,8 @@ npm run dev
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
 ANTHROPIC_API_KEY=
-RESEND_API_KEY=
+GMAIL_USER=
+GMAIL_APP_PASSWORD=
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 ```
 
@@ -35,7 +36,7 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 - Next.js 15 (App Router)
 - Supabase (Postgres + storage)
 - Anthropic API (Claude Haiku for summaries)
-- Resend (email delivery)
+- Nodemailer (email delivery)
 - Zod + React Hook Form
 
 ## Running tests

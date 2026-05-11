@@ -1,10 +1,16 @@
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
 import { AuditResponse } from './types';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
-const FROM_EMAIL = 'imabhishek40@gmail.com';
+const FROM_EMAIL = process.env.GMAIL_USER!;
 const FROM_NAME = 'AI Spend Audit';
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: FROM_EMAIL,
+    pass: process.env.GMAIL_APP_PASSWORD,
+  },
+});
 
 /**
  * Sends an audit report email to the user
@@ -173,21 +179,16 @@ View your full report: ${reportUrl}
 © ${new Date().getFullYear()} AI Spend Audit by Credex
     `.trim();
 
-    const result = await resend.emails.send({
-      from: `${FROM_NAME} <${FROM_EMAIL}>`,
+    const info = await transporter.sendMail({
+      from: `"${FROM_NAME}" <${FROM_EMAIL}>`,
       to: email,
       subject: `Your AI Spend Audit Report: Save $${monthlySavings}/month`,
       html: htmlContent,
       text: textContent,
-      replyTo: 'support@credex.com',
+      replyTo: FROM_EMAIL,
     });
 
-    if (result.error) {
-      console.error('[EMAIL_SERVICE] Resend error:', result.error);
-      return { success: false, error: result.error.message };
-    }
-
-    console.log('[EMAIL_SERVICE] Email sent successfully:', result.data?.id);
+    console.log('[EMAIL_SERVICE] Email sent successfully:', info.messageId);
     return { success: true };
   } catch (error) {
     console.error('[EMAIL_SERVICE] Unexpected error:', error);

@@ -43,7 +43,7 @@
 - I should have considered mobile-first design rather than going for desktop-first design. Shrinking designs is far more difficult than expanding them.
 
 **Blockers / what I'm stuck on:**
-- For sending result on the Email using the resend api  but it not working.
+- For sending result on the Email using Nodemailer.
 
 **Plan for tomorrow:**
 - Improve the the UI result page and Home Page.
@@ -61,7 +61,7 @@
 **What I learned:**
 - Today, I realised doing something wrong so i readed the document thoroughly again found that i missed the research part which i started today. 
 - Created a Repo for the project and push it to github.
--While exploring SES, Resend, and Postmark, I noticed that these email services are mainly built for startups and companies, so things like domain verification and production setup can feel a bit difficult for individual developers or personal projects.
+-While exploring SES, SendGrid, and Postmark, I noticed that these email services are mainly built for startups and companies, so things like domain verification and production setup can feel a bit difficult for individual developers or personal projects.
 - Adding Landing page.
 - Create the Interview.md File and Done first interview with Vishwadeep Singh.
 - Create the Devlog.md File and  Updated it.
