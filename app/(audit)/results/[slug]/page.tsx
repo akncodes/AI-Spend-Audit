@@ -118,7 +118,7 @@ export default async function ResultsPage({
             AI Strategic Summary
           </div>
           <p className="text-base text-slate-700 leading-relaxed">
-            "{audit.summary}"
+            &ldquo;{audit.summary}&rdquo;
           </p>
         </section>
 

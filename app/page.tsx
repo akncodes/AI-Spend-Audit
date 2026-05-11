@@ -39,7 +39,7 @@ export default function LandingPage() {
             </h1>
             
             <p className="text-lg text-slate-600 max-w-lg leading-relaxed">
-              Teams waste thousands of dollars a year on redundant AI subscriptions. Tell us what you use, and we'll show you exactly how to consolidate and save.
+              Teams waste thousands of dollars a year on redundant AI subscriptions. Tell us what you use, and we&apos;ll show you exactly how to consolidate and save.
             </p>
 
             {/* CTA Button instead of Form */}

@@ -6,16 +6,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 import {
   Share2,
-  Mail,
   Check,
   ArrowRight,
-  Copy,
   Lock
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { leadRequestSchema, LeadRequestInput } from "@/components/forms/form-schemas";
 import { ApiResponse } from "@/lib/types";
 
@@ -53,7 +50,7 @@ export default function AuditResultsClient({
       const shareUrl = `${window.location.origin}/share/${publicSlug}`;
       await navigator.clipboard.writeText(shareUrl);
       toast.success("Share link copied to clipboard!");
-    } catch (err) {
+    } catch {
       toast.error("Failed to copy link. Please try again.");
     }
   };
@@ -68,7 +65,7 @@ export default function AuditResultsClient({
         body: JSON.stringify(data),
       });
 
-      const result: ApiResponse<any> = await response.json();
+      const result = await response.json() as ApiResponse<{ success: boolean }>
 
       if (result.success) {
         setIsLeadCaptured(true);
@@ -76,7 +73,7 @@ export default function AuditResultsClient({
       } else {
         toast.error(result.error?.message || "Failed to save your report.");
       }
-    } catch (err) {
+    } catch {
       toast.error("A network error occurred. Please try again.");
     } finally {
       setIsCapturing(false);
@@ -112,7 +109,7 @@ export default function AuditResultsClient({
                 Optimization Opportunity
               </p>
               <h3 className="text-xl font-bold text-slate-900">
-                You're saving over ${monthlySavings}/mo!
+                You&apos;re saving over ${monthlySavings}/mo!
               </h3>
               <p className="text-slate-600 max-w-md text-sm">
                 Your AI stack has significant optimization potential. Credex can
@@ -177,7 +174,7 @@ export default function AuditResultsClient({
             <Check className="w-5 h-5 text-green-600" />
             <h3 className="font-semibold text-slate-900">Report Saved!</h3>
             <p className="text-slate-600 text-sm max-w-xs">
-              We've sent a copy of your audit to your inbox. Check your email for the full breakdown.
+              We&apos;ve sent a copy of your audit to your inbox. Check your email for the full breakdown.
             </p>
           </div>
         )}

@@ -37,9 +37,9 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
 
     let summary = '';
     try {
-      summary = await generateAuditSummary({
-        ...calculatedResults,
-      } as any);
+      summary = await generateAuditSummary(
+        calculatedResults as Omit<AuditResponse, 'summary'>
+      );
     } catch (aiError) {
       console.error('AI summary failed, continuing without it:', aiError);
       summary = 'Summary could not be generated, but your savings data is accurate.';

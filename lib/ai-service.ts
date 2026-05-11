@@ -1,4 +1,4 @@
-import { AuditResponse, Recommendation } from './types';
+import { AuditResponse } from './types';
 
 // fallback text for when claude API times out or errors
 const fallbacks = {

@@ -1,7 +1,6 @@
 import {
   SelectedTool,
   Recommendation,
-  AuditRequest,
   AuditResponse,
 } from "./types";
 import { TOOL_CONFIGS } from "./tools-config";
@@ -31,7 +30,7 @@ function auditTool(
     };
   }
 
-  const currentPlan = config.plans[tool.planId];
+  const currentPlan = config.plans[tool.planId] || { price: 0 };
   
   // Calculate the actual total spend for this tool. 
   // If the user selected a free plan but typed $15, force it to $0.

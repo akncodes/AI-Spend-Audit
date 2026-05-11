@@ -53,7 +53,7 @@ export default function SpendForm() {
     mode: "onChange",
   });
 
-  const { fields, append, remove } = useFieldArray({
+  const { append, remove } = useFieldArray({
     control,
     name: "tools",
   });
@@ -70,7 +70,7 @@ export default function SpendForm() {
         } else {
           toast.error("Failed to load AI tool configurations.");
         }
-      } catch (err) {
+      } catch {
         toast.error("Network error while loading tools.");
       } finally {
         setIsLoadingTools(false);
@@ -88,9 +88,9 @@ export default function SpendForm() {
         setValue("tools", parsed.tools || []);
         setValue("teamSize", parsed.teamSize || 1);
         setValue("useCase", parsed.useCase || "coding");
-      } catch (e) {
+      } catch {
         // corrupted data, just ignore
-        console.log("couldn't restore form state", e);
+        console.log("couldn't restore form state");
       }
     }
   }, [setValue]);
@@ -144,7 +144,7 @@ export default function SpendForm() {
         body: JSON.stringify(data),
       });
 
-      const result: ApiResponse<any> = await response.json();
+      const result = await response.json() as ApiResponse<{ publicSlug: string }>
 
       if (result.success && result.data) {
         toast.success("Audit complete! Analyzing your savings...");
@@ -152,7 +152,7 @@ export default function SpendForm() {
       } else {
         toast.error(result.error?.message || "An error occurred during audit.");
       }
-    } catch (err) {
+    } catch {
       toast.error("Failed to submit audit. Please try again.");
     } finally {
       setIsSubmitting(false);
@@ -207,7 +207,7 @@ export default function SpendForm() {
           <Label htmlFor="useCase">Primary Use Case</Label>
           <Select
             value={getValues("useCase")}
-            onValueChange={(val) => setValue("useCase", val as any, { shouldValidate: true })}
+            onValueChange={(val) => setValue("useCase", val as 'coding' | 'writing' | 'data' | 'research' | 'mixed', { shouldValidate: true })}
           >
             <SelectTrigger className="h-10 text-blue-400">
               <SelectValue placeholder="Select use case" />
