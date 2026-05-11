@@ -51,7 +51,7 @@ Capture exact things they said. Use quotation marks and preserve their language:
 - **Company:** SIHO Research 
 - **Team Size:**  
 - **Interview Date:** 11-05-2026
-- **Interview Length:** 
+- **Interview Length:** 15 minutes
 
 ### Direct Quotes
 > "In terms of tracking, we do keep a track of usage and billings, but nothing for cost optimization as of now"
@@ -67,7 +67,10 @@ Capture exact things they said. Use quotation marks and preserve their language:
 ### Key Insights
 - I see it overvalued and lack of skills in team.
 - 
+
 ### Design Changes from Feedback
+- Add a guide to Best practices Ai tool.
+- Keep the track of spending on the tool. 
 
 
 

@@ -83,6 +83,7 @@ The Email Issue still not solved. Will work on it.
 - Email Report Send Functionality is not working working with Resend because it needs the domain name to send the mail So i tried with SES and Postmark but they also not working. So  i used the nodemailer with my gmail app password and it worked.
 - Running ESLint was failing resolve it 
 - Create the file named Reflection.md 
+- Added the second User interview data of Pritish Tomar
 
 **What I learned:**
 -  Today, I learned about the ESLint . 
