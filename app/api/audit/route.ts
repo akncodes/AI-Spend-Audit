@@ -4,7 +4,7 @@ import { auditRequestSchema } from "@/components/forms/form-schemas";
 import { auditAllTools } from "@/lib/audit-engine";
 import { generateAuditSummary } from "@/lib/ai-service";
 import { supabase } from "@/lib/supabase";
-import { ApiResponse, AuditResponse } from "@/lib/types";
+import { ApiResponse } from "@/lib/types";
 
 export async function POST(req: NextRequest): Promise<NextResponse> {
   try {
@@ -38,9 +38,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
 
     let summary = "";
     try {
-      summary = await generateAuditSummary(
-        calculatedResults as Omit<AuditResponse, "summary">,
-      );
+      summary = await generateAuditSummary(calculatedResults);
     } catch (aiError) {
       console.error("AI summary failed, continuing without it:", aiError);
       summary =
