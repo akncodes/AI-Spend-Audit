@@ -1,14 +1,18 @@
 import { supabase } from "@/lib/supabase";
 import { AuditResponse } from "@/lib/types";
 
-export async function getAuditBySlug(slug: string): Promise<AuditResponse | null> {
+export async function getAuditBySlug(
+  slug: string,
+): Promise<AuditResponse | null> {
   if (!slug) {
     throw new Error("slug is required");
   }
 
   const { data: audit, error: dbError } = await supabase
     .from("audits")
-    .select("id, public_slug, recommendations, current_spend_monthly, total_savings_monthly, ai_summary")
+    .select(
+      "id, public_slug, recommendations, current_spend_monthly, total_savings_monthly, ai_summary",
+    )
     .eq("public_slug", slug)
     .single();
 

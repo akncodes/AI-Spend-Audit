@@ -1,8 +1,4 @@
-import {
-  SelectedTool,
-  Recommendation,
-  AuditResponse,
-} from "./types";
+import { SelectedTool, Recommendation, AuditResponse } from "./types";
 import { TOOL_CONFIGS } from "./tools-config";
 
 interface AuditResult {
@@ -26,20 +22,26 @@ function auditTool(
         reason: "Tool configuration not found.",
       },
       calculatedCurrentSpend: tool.monthlySpend,
-      calculatedRecommendedSpend: tool.monthlySpend
+      calculatedRecommendedSpend: tool.monthlySpend,
     };
   }
 
   const currentPlan = config.plans[tool.planId] || { price: 0 };
-  
-  // Calculate the actual total spend for this tool. 
+
+  // Calculate the actual total spend for this tool.
   // If the user selected a free plan but typed $15, force it to $0.
   const isFreePlan = currentPlan?.price === 0;
   const effectiveSeats = Math.max(tool.seats || 1, teamSize);
-  const calculatedSpend = isFreePlan ? 0 : (currentPlan ? currentPlan.price * effectiveSeats : tool.monthlySpend);
-  
+  const calculatedSpend = isFreePlan
+    ? 0
+    : currentPlan
+      ? currentPlan.price * effectiveSeats
+      : tool.monthlySpend;
+
   // Only override with manual input if it's NOT a free plan and they input more than baseline (e.g. add-ons)
-  const currentMonthlyTotal = isFreePlan ? 0 : Math.max(tool.monthlySpend, calculatedSpend);
+  const currentMonthlyTotal = isFreePlan
+    ? 0
+    : Math.max(tool.monthlySpend, calculatedSpend);
 
   // cursor pro is solo-only — flag it for teams
   if (tool.toolId === "cursor" && tool.planId === "pro" && effectiveSeats > 1) {
@@ -56,10 +58,10 @@ function auditTool(
           reason: `Cursor Pro is for solo devs. For a team of ${effectiveSeats}, Business ($${config.plans.business.price}/mo/user) is recommended, saving $${monthlySavings}/mo.`,
         },
         calculatedCurrentSpend: currentMonthlyTotal,
-        calculatedRecommendedSpend: businessPriceTotal
+        calculatedRecommendedSpend: businessPriceTotal,
       };
     } else {
-       return {
+      return {
         recommendation: {
           toolId: tool.toolId,
           action: "switch",
@@ -68,7 +70,7 @@ function auditTool(
           reason: `Cursor Pro is for solo devs. You should switch to Business ($${config.plans.business.price}/mo/user) for a team of ${effectiveSeats} for security, even if it costs more.`,
         },
         calculatedCurrentSpend: currentMonthlyTotal,
-        calculatedRecommendedSpend: currentMonthlyTotal // Clamp it so the necessary upgrade doesn't eat the total savings pool
+        calculatedRecommendedSpend: currentMonthlyTotal, // Clamp it so the necessary upgrade doesn't eat the total savings pool
       };
     }
   }
@@ -111,7 +113,7 @@ function auditTool(
           reason: `For ${useCase}, ${altConfig.name} starts at $${cheapestAltPlan.price}/mo — a cheaper option.`,
         },
         calculatedCurrentSpend: currentMonthlyTotal,
-        calculatedRecommendedSpend: cheapestAltPlan.price
+        calculatedRecommendedSpend: cheapestAltPlan.price,
       };
     }
   }
@@ -124,7 +126,7 @@ function auditTool(
       reason: "Current plan looks well-optimized for your team and use case.",
     },
     calculatedCurrentSpend: currentMonthlyTotal,
-    calculatedRecommendedSpend: currentMonthlyTotal
+    calculatedRecommendedSpend: currentMonthlyTotal,
   };
 }
 
@@ -138,8 +140,12 @@ export function auditAllTools(
   const recommendations: Recommendation[] = [];
 
   for (const tool of tools) {
-    const { recommendation, calculatedCurrentSpend, calculatedRecommendedSpend } = auditTool(tool, teamSize, useCase);
-    
+    const {
+      recommendation,
+      calculatedCurrentSpend,
+      calculatedRecommendedSpend,
+    } = auditTool(tool, teamSize, useCase);
+
     totalCurrentMonthly += calculatedCurrentSpend;
     totalRecommendedMonthly += calculatedRecommendedSpend;
     recommendations.push(recommendation);

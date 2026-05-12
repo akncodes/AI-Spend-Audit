@@ -1,4 +1,4 @@
-import { PlanConfig } from './types';
+import { PlanConfig } from "./types";
 
 export interface ToolConfiguration {
   toolId: string;
@@ -10,81 +10,106 @@ export interface ToolConfiguration {
 // TODO: pull this from DB eventually so we can update without deploys
 export const TOOL_CONFIGS: Record<string, ToolConfiguration> = {
   cursor: {
-    toolId: 'cursor',
-    name: 'Cursor',
+    toolId: "cursor",
+    name: "Cursor",
     plans: {
-      hobby: { planId: 'hobby', name: 'Hobby', price: 0, billing: 'free' },
-      pro: { planId: 'pro', name: 'Pro', price: 20, billing: 'monthly' },
-      business: { planId: 'business', name: 'Business', price: 40, billing: 'monthly' },
+      hobby: { planId: "hobby", name: "Hobby", price: 0, billing: "free" },
+      pro: { planId: "pro", name: "Pro", price: 20, billing: "monthly" },
+      business: {
+        planId: "business",
+        name: "Business",
+        price: 40,
+        billing: "monthly",
+      },
     },
-    alternatives: {}
+    alternatives: {},
   },
   claude: {
-    toolId: 'claude',
-    name: 'Claude',
+    toolId: "claude",
+    name: "Claude",
     plans: {
       free: { planId: 'free', name: 'Free', price: 0, billing: 'free' },
       pro: { planId: 'pro', name: 'Pro', price: 20, billing: 'monthly' },
       team: { planId: 'team', name: 'Team', price: 15, billing: 'monthly' },
     },
-    alternatives: {}
+    alternatives: {},
   },
   chatgpt: {
-    toolId: 'chatgpt',
-    name: 'ChatGPT',
+    toolId: "chatgpt",
+    name: "ChatGPT",
     plans: {
       free: { planId: 'free', name: 'Free', price: 0, billing: 'free' },
       plus: { planId: 'plus', name: 'Plus', price: 20, billing: 'monthly' },
       team: { planId: 'team', name: 'Team', price: 25, billing: 'monthly' },
     },
     alternatives: {
-      coding: 'cursor', // suggest Cursor for coding
-    }
-  },
-  'github-copilot': {
-    toolId: 'github-copilot',
-    name: 'GitHub Copilot',
-    plans: {
-      individual: { planId: 'individual', name: 'Individual', price: 10, billing: 'monthly' },
-      business: { planId: 'business', name: 'Business', price: 19, billing: 'monthly' },
+      coding: "cursor", // suggest Cursor for coding
     },
-    alternatives: {}
   },
-  'openai-api': {
-    toolId: 'openai-api',
-    name: 'OpenAI API',
+  "github-copilot": {
+    toolId: "github-copilot",
+    name: "GitHub Copilot",
     plans: {
-      direct: { planId: 'direct', name: 'Direct', price: 0, billing: 'monthly' },
+      individual: {
+        planId: "individual",
+        name: "Individual",
+        price: 10,
+        billing: "monthly",
+      },
+      business: {
+        planId: "business",
+        name: "Business",
+        price: 19,
+        billing: "monthly",
+      },
     },
-    alternatives: {}
+    alternatives: {},
   },
-  'anthropic-api': {
-    toolId: 'anthropic-api',
-    name: 'Anthropic API',
+  "openai-api": {
+    toolId: "openai-api",
+    name: "OpenAI API",
     plans: {
-      direct: { planId: 'direct', name: 'Direct', price: 0, billing: 'monthly' },
+      direct: {
+        planId: "direct",
+        name: "Direct",
+        price: 0,
+        billing: "monthly",
+      },
     },
-    alternatives: {}
+    alternatives: {},
+  },
+  "anthropic-api": {
+    toolId: "anthropic-api",
+    name: "Anthropic API",
+    plans: {
+      direct: {
+        planId: "direct",
+        name: "Direct",
+        price: 0,
+        billing: "monthly",
+      },
+    },
+    alternatives: {},
   },
   gemini: {
-    toolId: 'gemini',
-    name: 'Gemini',
+    toolId: "gemini",
+    name: "Gemini",
     plans: {
-      free: { planId: 'free', name: 'Free', price: 0, billing: 'free' },
-      pro: { planId: 'pro', name: 'Pro', price: 20, billing: 'monthly' },
+      free: { planId: "free", name: "Free", price: 0, billing: "free" },
+      pro: { planId: "pro", name: "Pro", price: 20, billing: "monthly" },
     },
     alternatives: {
-      coding: 'cursor',
-      writing: 'chatgpt'
-    }
+      coding: "cursor",
+      writing: "chatgpt",
+    },
   },
   windsurf: {
-    toolId: 'windsurf',
-    name: 'Windsurf',
+    toolId: "windsurf",
+    name: "Windsurf",
     plans: {
       free: { planId: 'free', name: 'Free', price: 0, billing: 'free' },
       pro: { planId: 'pro', name: 'Pro', price: 20, billing: 'monthly' },
     },
-    alternatives: {}
-  }
+    alternatives: {},
+  },
 };

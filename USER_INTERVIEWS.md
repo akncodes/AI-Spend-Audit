@@ -45,7 +45,7 @@ Capture exact things they said. Use quotation marks and preserve their language:
 
 ## Interview 2: Pritish Tomar
 
-**Status:** Pending  ( He will be available tomorrow)
+**Status:** Completed
 ### Profile
 - **Role:** Algo Engineer 
 - **Company:** SIHO Research 
@@ -74,7 +74,7 @@ Capture exact things they said. Use quotation marks and preserve their language:
 
 
 
-## Interview 3: [NAME/ROLE]
+## Interview 3: 
 
 **Status:** [ ] Pending | [ ] Completed | [ ] Recording available
 
