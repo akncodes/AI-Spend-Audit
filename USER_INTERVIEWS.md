@@ -74,29 +74,36 @@ Capture exact things they said. Use quotation marks and preserve their language:
 
 
 
-## Interview 3: 
+## Interview 3: Deepak Kumar
 
 **Status:** [ ] Pending | [ ] Completed | [ ] Recording available
 
 ### Profile
-- **Role:** 
-- **Company:** 
-- **Team Size:** 
-- **Interview Date:** 
-- **Interview Length:** 
+- **Role:** Project Lead
+- **Company:** Techpix
+- **Team Size:** 11-50 employees
+- **Interview Date:** 12-05-2026
+- **Interview Length:** 15 minutes
 
 ### Direct Quotes
+>"My team is currently working on 2 products under my team, and our team spends roughly around $250–$400/month on AI tools and APIs combined.
 
+>"Overall, the value is definitely good because AI tools have improved our development speed a lot, especially for debugging, documentation, UI generation, and rapid prototyping. As a developer, I also work heavily with AI-driven development and vibe coding workflows, so these tools are part of our daily process now."
+
+>"I have experience we mostly overspending because of team members not knowing how to use the tools efficiently and no proper tracking system."
+>"Company don't compares the pricing of the team subscriptions and other plans."
 
 ### Key Insights
-[What surprised you?]
+Company don't compares the pricing of the team subscriptions and other plans.
 
 ### Design Changes from Feedback
-[What design/feature change did you make?]
+- Create a system which can forcasting to predict the spend of monthly  spending.
+- Cost optimization suggestion based on the past spendings.
 
----
 
-## Summary of Insights Across All Interviews
+
+
+
 
 
 
