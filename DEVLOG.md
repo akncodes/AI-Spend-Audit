@@ -1,10 +1,11 @@
 # DEVLOG.md — Daily Development Log (7 Days Required)
 
-**Submission Deadline:** 2026-05-15 (7 days from 2026-05-08)  
-**Format:** One entry per day, even if you took the day off
+**Submission Deadline:** 2026-05-13
+
 
 ---
-
+## I not work on the 7 May 2026 due to family commitments.
+---
 ## Day 1 — 2026-05-08
 
 **Hours worked:** 2  
@@ -76,7 +77,7 @@ The Email Issue still not solved. Will work on it.
 
 ## Day 4 — 2026-05-11
 
-**Hours worked:** 
+**Hours worked:** 4
 **What I did:**
 - Today, Create the Test.md  file for recording the test cases.
 - Done testing and found that the mail is not sending properly. 
@@ -94,3 +95,27 @@ Anothropic Token is out of scope so i used the openrouter api
 
 **Plan for tomorrow:**
 - Email report sending issue will solve
+
+
+## Day 5 — 2026-05-12
+
+**Hours worked:** 2  
+**What I did:**
+- Added the ECONOMICS.md file for recording the economic analysis.
+- Updated the USER_INTERVIEWS.md file for recording the user interviews.
+- Added the LANDING_PAGE.md for recording the landing page.
+- Added the SPECIFICATIONS.md for recording the prompts.
+- Added the ARCHITECTURE.md for recording the test cases.
+- Updated the REFLECTION.md for recording the reflection.
+
+
+**What I learned:**
+-  Today, I learned about the Economics Of AI  and  Scalingof websites.
+- 
+
+**Blockers / what I'm stuck on:**
+
+
+**Plan for tomorrow:**
+- After completing the the file METRICS.md and Prompts. Push it .
+- Final Update on the README.md file .
