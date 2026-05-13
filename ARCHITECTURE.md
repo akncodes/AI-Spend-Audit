@@ -242,68 +242,44 @@ Phase 3 (10k audits/day) — Async-first
 ## 5. Component Hierarchy & Structure
 
 ```
-app/
-├── layout.tsx              
-├── page.tsx                
-├── globals.css            
-├── favicon.ico
+ai-spend-audit/
+├── app/                        # Next.js App Router: All pages and routes
+│   ├── (audit)/                # Grouped routes for the audit flow
+│   ├── api/                    # API endpoints (e.g., Anthropic, Nodemailer)
+│   ├── scan/                   # The main scan/audit form page
+│   ├── testimonials/           # The new Testimonials page we just added!
+│   ├── globals.css             # Global Tailwind styles
+│   ├── layout.tsx              # Main application layout & metadata
+│   └── page.tsx                # The Landing Page
 │
-├── scan/
-│   └── page.tsx           
+├── components/                 # Reusable React components
+│   ├── common/                 # Shared components (headers, footers)
+│   ├── forms/                  # Form inputs and handling
+│   ├── results/                # Components for displaying audit results/savings
+│   ├── share/                  # Components for sharing the report
+│   └── ui/                     # Base UI components (Card, Avatar, Button, etc.)
 │
-├── (audit)/                
-│   ├── results/
-│   │   └── [slug]/
-│   │       ├── page.tsx              
-│   │       └── AuditResultsClient.tsx 
-│   └── share/
-│       └── [slug]/
-│           └── page.tsx    
+├── lib/                        # Utility functions, business logic, and integrations
+│   ├── audit-engine.ts         # Rule-based logic for calculating savings
+│   ├── email-service.ts        # Nodemailer integration
+│   └── ...
 │
-└── api/
-    ├── audit/
-    │   ├── route.ts         
-    │   └── [slug]/
-    │       └── route.ts     
-    ├── leads/
-    │   └── route.ts         
-    ├── tools/
-    │   └── route.ts         
-    └── health/
-        └── route.ts         
+├── public/                     # Static assets
+│   └── demo.mp4                # Your demo video
+│
+├── supabase/                   # Supabase configuration and migrations
+│   └── migrations/
+│
+├── __tests__/                  # Unit and integration tests
+├── scripts/                    # Helper scripts (e.g., database seeding)
+│
+├── .env.example                # Example environment variables
+├── .env.local                  # Your actual local secrets (git ignored)
+├── next.config.ts              # Next.js configuration
+├── package.json                # Project dependencies and scripts
+├── tailwind.config.ts          # Tailwind CSS configuration
+└── README.md                   # Project documentation
 
-components/
-├── forms/
-│   ├── SpendForm.tsx        
-│   ├── ToolSelector.tsx     
-│   └── form-schemas.ts      
-│
-├── ui/                      
-│   ├── avatar.tsx
-│   ├── badge.tsx
-│   ├── button.tsx
-│   ├── card.tsx
-│   ├── input.tsx
-│   ├── label.tsx
-│   └── select.tsx
-│
-├── common/                  
-├── results/                 
-└── share/                   
-
-lib/
-├── types.ts                 
-├── tools-config.ts          
-├── audit-engine.ts          
-├── audit-service.ts         
-├── ai-service.ts            
-├── email-service.ts         
-├── supabase.ts              
-└── utils.ts                 
-
-__tests__/
-├── audit-engine.test.ts     
-└── form-validation.test.ts  
 
 scripts/ 
 

@@ -55,3 +55,4 @@ npm test
 - Used Supabase for database and storage because it is provide easy to use database and storage. it is also easy for the scalling the webapplication.
 - I used the nodemailer for sending the audit report to the user. Instead of the resend, postmark and the SES because they are paid services or need company email account and professional domain of the website but nodemailer is free to use.
 - Used Vercel for deploying the website because it is provide easy to use deployment and hosting of the website. it is also easy for the scalling the webapplication.
+- I also add page testimonials of all the three User interview. 

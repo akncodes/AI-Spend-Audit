@@ -16,6 +16,11 @@ export default function LandingPage() {
             AI Spend Audit
           </span>
         </div>
+        <nav className="hidden md:flex items-center gap-6">
+          <Link href="/testimonials" className="text-sm font-medium text-slate-600 hover:text-teal-600 transition-colors">
+            Testimonials
+          </Link>
+        </nav>
       </header>
 
       {/* Main Content Area */}
