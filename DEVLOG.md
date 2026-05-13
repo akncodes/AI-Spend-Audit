@@ -119,3 +119,23 @@ Anothropic Token is out of scope so i used the openrouter api
 **Plan for tomorrow:**
 - After completing the the file METRICS.md and Prompts. Push it .
 - Final Update on the README.md file .
+
+## Day 6 — 2026-05-13
+
+**Hours worked:** 2  
+**What I did:**
+- Updated the README.md file 
+- Create a page for the user review named testimonials.tsx
+- Updated the Architechture.md file
+- created the demo video and added  it in README.md file
+
+
+
+
+**What I learned:**
+
+
+**Blockers / what I'm stuck on:**
+
+
+**Plan for tomorrow:**

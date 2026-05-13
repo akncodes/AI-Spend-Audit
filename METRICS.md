@@ -293,13 +293,13 @@ SELECT SUM(total_spend) as total_audited_spend FROM audits WHERE created_at >= N
 
 ## Success Criteria (Month 1)
 
-✅ **Must have:**
+ **Must have:**
 - [ ] Dashboard set up and showing real data
 - [ ] Email capture rate ≥ 10%
 - [ ] Audits > 0 (proof of concept)
 - [ ] Average savings > $100 (audit logic working)
 
-⚠️ **Nice to have:**
+ **Nice to have:**
 - [ ] Email capture rate ≥ 15%
 - [ ] 100+ audits (early traction)
 - [ ] Share link clicks (viral loop signal)
