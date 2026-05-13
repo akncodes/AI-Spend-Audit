@@ -49,7 +49,7 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 npm test
 ```
 
-##Decisions
+## Decisions
 - Used Next.js and Typescript for building the website because it is provide server side rendred website ,it is also a static website Seo friendly and faster.
 - Used rule Based Audit Logic instead of AI because AI can hallucinate but initially i was used the complete AI based audit logic using Anthropic API for generating the Audit report but it started hallucinate the cost savings and plan ,so i have replaced it with rule based audit logic.
 - Used Supabase for database and storage because it is provide easy to use database and storage. it is also easy for the scalling the webapplication.
