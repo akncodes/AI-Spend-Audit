@@ -13,7 +13,7 @@ Built with Next.js, Supabase, and Anthropic API.
 
 ## Demo Video
 
-[Watch Demo Video]([https://your-video-link.com](https://drive.google.com/file/d/14knExATs075wJcFx4bXnLLruN1zm1LTz/view?usp=sharing))
+[Watch Demo Video](https://your-video-link.com](https://drive.google.com/file/d/14knExATs075wJcFx4bXnLLruN1zm1LTz/view?usp=sharing)
 
 
 ## Setup
