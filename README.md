@@ -13,7 +13,7 @@ Built with Next.js, Supabase, and Anthropic API.
 
 ## Demo Video
 
-<video src="./public/demo.mp4" controls width="700" aspect-ratio="16:9"></video>
+<video src="/demo.mp4" controls width="700" aspect-ratio="16:9"></video>
 
 ## Setup
 
