@@ -11,6 +11,10 @@ Built with Next.js, Supabase, and Anthropic API.
 - Shows potential monthly/annual savings
 - Generates a shareable report link
 
+## Demo Video
+
+<video src="./public/demo.mp4" controls width="700" aspect-ratio="16:9"></video>
+
 ## Setup
 
 ```bash
